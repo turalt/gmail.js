@@ -1437,6 +1437,8 @@ var Gmail = function(localJQuery) {
                         events.send_message = [params.url, params.body, sent_email];
                     } else if (prop.indexOf("^scheduled") > -1) {
                         events.send_scheduled_message = [params.url, params.body, sent_email];
+                    } else if (prop.indexOf("^r") !== -1 && prop.indexOf("^r_bt") !== -1) {
+                        events.save_draft = [params.url, params.body, sent_email];
                     }
                 }
             }
